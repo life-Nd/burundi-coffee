@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffaello.dev - AI Web Builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&amp;family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: #1f2937;
+        }
+        .hero {
+            background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
+            animation: gradientAnimation 12s ease infinite;
+            background-size: 200% 200%;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .feature-card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .cta-button {
+            background: linear-gradient(to right, #8b5cf6, #a78bfa);
+            color: white;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: linear-gradient(to right, #a78bfa, #8b5cf6);
+        }
+        /* Animations */
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease forwards;
+            opacity: 0;
+        }
+        .animate-slide-in-left {
+            animation: slideInLeft 1.2s ease forwards;
+            transform: translateX(-40px);
+            opacity: 0;
+        }
+        .animate-slide-in-right {
+            animation: slideInRight 1.2s ease forwards;
+            transform: translateX(40px);
+            opacity: 0;
+        }
+        .animate-slide-in-bottom {
+            animation: slideInBottom 1.2s ease forwards;
+            transform: translateY(40px);
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInLeft {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInRight {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInBottom {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <a href="#" class="text-2xl font-semibold text-gray-800">Raffaello.dev</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-gray-800">Features</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">Pricing</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">Testimonials</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">Contact</a>
+                <a href="#" class="cta-button py-2 px-6 rounded-full font-semibold inline-block">Get Started</a>
+            </div>
+            <button class="md:hidden text-gray-500 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header (Banner) -->
+    <header class="relative">
+        <img src="https://images.pexels.com/photos/5474281/pexels-photo-5474281.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="AI Web Design" class="w-full h-96 object-cover object-center">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+            <h1 class="text-4xl font-bold mb-4 animate-fade-in">Craft Your Vision with AI</h1>
+            <p class="text-xl text-gray-700 mb-8 animate-fade-in delay-100">Effortlessly build elegant websites that captivate.</p>
+            <a href="#" class="cta-button py-3 px-8 rounded-full font-semibold hover:shadow-md inline-block animate-fade-in delay-200">Start Building Now</a>
+        </div>
+    </header>
+
+    <!-- Features Section (Bento Layout) -->
+    <section class="py-20">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-16">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-2xl hover:shadow-lg animate-slide-in-left">
+                    <h3 class="text-xl font-semibold mb-4">AI-Powered Design</h3>
+                    <p class="text-gray-600">Generate sophisticated designs effortlessly.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-2xl hover:shadow-lg animate-slide-in-right">
+                    <h3 class="text-xl font-semibold mb-4">Drag &amp; Drop Interface</h3>
+                    <p class="text-gray-600">Customize your site with intuitive ease.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-2xl hover:shadow-lg md:col-span-2 lg:col-span-1 animate-slide-in-bottom">
+                    <h3 class="text-xl font-semibold mb-4">SEO Optimization</h3>
+                    <p class="text-gray-600">Enhance your visibility with built-in SEO tools.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card p-8 rounded-2xl hover:shadow-lg animate-slide-in-left">
+                    <h3 class="text-xl font-semibold mb-4">Responsive Design</h3>
+                    <p class="text-gray-600">Ensure a flawless experience on any device.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card p-8 rounded-2xl hover:shadow-lg animate-slide-in-right">
+                    <h3 class="text-xl font-semibold mb-4">Custom Domain</h3>
+                    <p class="text-gray-600">Establish a professional online presence.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card p-8 rounded-2xl hover:shadow-lg md:col-span-2 lg:col-span-1 animate-slide-in-bottom">
+                    <h3 class="text-xl font-semibold mb-4">24/7 Support</h3>
+                    <p class="text-gray-600">Receive expert assistance whenever you need it.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-16">Kind Words from Our Users</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <p class="text-gray-700 italic mb-4">"Raffaello.dev has transformed my website building process. The AI is intuitive, and the results are simply stunning."</p>
+                    <div class="flex items-center">
+                        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=80&amp;h=80&amp;dpr=1" alt="User Avatar" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <p class="font-semibold">John Doe</p>
+                            <p class="text-sm text-gray-500">CEO, Company</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <p class="text-gray-700 italic mb-4">"I've tried numerous web builders, but Raffaello.dev stands out with its ease of use and powerful features. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <img src="https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=80&amp;h=80&amp;dpr=1" alt="User Avatar" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <p class="font-semibold">Jane Smith</p>
+                            <p class="text-sm text-gray-500">Freelancer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-16">Choose Your Perfect Plan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Basic</h3>
+                    <p class="text-gray-600 mb-6">Ideal for personal projects</p>
+                    <p class="text-4xl font-bold mb-4">$9/month</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-6">
+                        <li>5 Pages</li>
+                        <li>Basic AI Features</li>
+                        <li>Standard Support</li>
+                    </ul>
+                    <a href="#" class="cta-button py-3 px-8 rounded-full font-semibold hover:shadow-md inline-block">Get Started</a>
+                </div>
+                <!-- Plan 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Pro</h3>
+                    <p class="text-gray-600 mb-6">For growing businesses</p>
+                    <p class="text-4xl font-bold mb-4">$19/month</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-6">
+                        <li>Unlimited Pages</li>
+                        <li>Advanced AI Features</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#" class="cta-button py-3 px-8 rounded-full font-semibold hover:shadow-md inline-block">Get Started</a>
+                </div>
+                <!-- Plan 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Enterprise</h3>
+                    <p class="text-gray-600 mb-6">Custom solutions for large teams</p>
+                    <p class="text-4xl font-bold mb-4">Contact Us</p>
+                    <ul class="list-disc list-inside text-gray-600 mb-6">
+                        <li>Custom Features</li>
+                        <li>Dedicated Support</li>
+                        <li>Scalable Infrastructure</li>
+                    </ul>
+                    <a href="#" class="cta-button py-3 px-8 rounded-full font-semibold hover:shadow-md inline-block">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-100 to-gray-200">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-12 animate-pulse text-gray-800">Ready to elevate your web presence?</h2>
+            <a href="#" class="cta-button py-3 px-8 rounded-full font-semibold hover:shadow-md inline-block">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <p class="text-gray-600">© 2024 Raffaello.dev. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-600 hover:text-gray-800">Terms of Service</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+
+ </body></html>
